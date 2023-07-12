@@ -5,6 +5,9 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Form from './Form.js'
 
+// Material UI libraries
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -15,12 +18,16 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function FullWidthGrid() {
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
-         <Grid item xs={12} md={12} xl={12}>
-            
-            {/* <Form/> */}
+        <Grid item xs={12} md={12} xl={11}>
+            <Typography variant="h3" style={{ color: '#34608F' }}>
+                Request vendors for quotes
+            </Typography>
+        </Grid>
+        <Grid item xs={12} md={12} xl={12}>
         </Grid>
         <Grid item xs={6} md={8}>
           <Item>xs=6 md=8</Item>
