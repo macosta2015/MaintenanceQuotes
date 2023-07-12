@@ -1,7 +1,29 @@
 import { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+
+const useStyles = makeStyles((theme) => ({
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    maxWidth: "400px",
+    margin: "0 auto",
+    padding: theme.spacing(2),
+    backgroundColor: "#f5f5f5",
+    borderRadius: "4px",
+  },
+  input: {
+    marginBottom: theme.spacing(2),
+  },
+  submitButton: {
+    alignSelf: "flex-end",
+  },
+}));
 
 export default function Multiple() {
-  const [formData, setFormData] = useState({name: "",email: "",message: ""});
+  const classes = useStyles();
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -10,22 +32,51 @@ export default function Multiple() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(`Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
+    alert(
+      `Name: ${formData.name}, Email: ${formData.email}, Message: ${formData.message}`
     );
-};
+  };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
-      <input type="text" id="name" name="name" value={formData.name} onChange={handleChange}/>
+    <form className={classes.form} onSubmit={handleSubmit}>
+      <TextField
+        className={classes.input}
+        label="Name"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
 
-      <label htmlFor="email">Email:</label>
-      <input type="email" id="email" name="email" value={formData.email} onChange={handleChange}/>
+      <TextField
+        className={classes.input}
+        label="Email"
+        id="email"
+        name="email"
+        type="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
 
-      <label htmlFor="message">Message:</label>
-      <textarea id="message" name="message" value={formData.message} onChange={handleChange}/>
+      <TextField
+        className={classes.input}
+        label="Message"
+        id="message"
+        name="message"
+        multiline
+        rows={4}
+        value={formData.message}
+        onChange={handleChange}
+      />
 
-      <button type="submit">Submit</button>
+      <Button
+        className={classes.submitButton}
+        variant="contained"
+        color="primary"
+        type="submit"
+      >
+        Submit
+      </Button>
     </form>
   );
 }
