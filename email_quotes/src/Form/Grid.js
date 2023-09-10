@@ -2,13 +2,14 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid';
 import Form from './Form.js'
 
 console.log('Hello World')
 // Material UI libraries
-import Typography from '@mui/material/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -24,9 +25,9 @@ export default function FullWidthGrid() {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={12} xl={11}>
-            <Typography variant="h3" style={{ color: '#34608F' }}>
-                Request vendors for quotes
-            </Typography>
+          <Typography variant="h3" style={{ color: '#34608F' }}>
+            Request vendors for quotes
+          </Typography>
         </Grid>
         <Grid item xs={12} md={12} xl={12}>
         </Grid>
