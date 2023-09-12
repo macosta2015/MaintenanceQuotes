@@ -7,9 +7,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid';
 import Form from './Form.js'
 
-console.log('Hello World')
-// Material UI libraries
-
+console.log('Trust the process')
+// Material UI librarieess
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
