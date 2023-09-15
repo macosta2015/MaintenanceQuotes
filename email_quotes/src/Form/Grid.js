@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 import Form from './Form.js'
 
 console.log('Trust the process and keep going')
-// Material UI librarieess
+// Material UI librariees
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
