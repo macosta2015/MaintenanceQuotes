@@ -8,6 +8,7 @@ import Grid from '@mui/material/Grid';
 import Form from './Form.js'
 
 console.log('Trust the process and keep going!!')
+console.log('Are you still moving! Go Baby, you got this')
 // Material UI librariees
 
 const Item = styled(Paper)(({ theme }) => ({
