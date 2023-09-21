@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@mui/material/Grid';
 import Form from './Form.js'
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 
 console.log('Trust the process and keep going!! LFG ')
 console.log('Are you still moving! Go Baby, you got this')
@@ -19,15 +21,27 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
+const theme = createTheme({
+  typography: {
+    fontFamily: 'Roboto, sans-serif',
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+    fontWeightBold: 700,
+  },
+});
+
 export default function FullWidthGrid() {
 
   return (
+    <ThemeProvider theme={theme}>
+
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} md={12} xl={11}>
-          <Typography variant="h3" style={{ color: '#34608F' }}>
+          <Typography variant="h3" style={{ color: '#34608F', textAlign: 'center' }}>
             Request vendors for quotes
-          </Typography>
+            </Typography>
         </Grid>
         <Grid item xs={12} md={12} xl={12}>
         </Grid>
@@ -45,5 +59,7 @@ export default function FullWidthGrid() {
         </Grid>
       </Grid>
     </Box>
+    </ThemeProvider>
+
   );
 }
