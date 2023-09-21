@@ -38,7 +38,7 @@ export default function Multiple() {
   };
 
   return (
-    <form className={classes.form} onSubmit={handleSubmit}>
+    <form className={classes.form} onSubmit={handleSubmit} style={{ marginTop: '2%' }}>
       <TextField
         className={classes.input}
         label="Name"
